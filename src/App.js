@@ -8,7 +8,6 @@ import Layout from "./component/Layout";
 function App() {
   return (
     <>
-      <p>Hola</p>
       <Layout />
     </>
   );
