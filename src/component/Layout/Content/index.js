@@ -1,7 +1,7 @@
 /*----- Core -----*/
 import React from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import Proyects from "./Proyects";
+import Projects from "./Projects";
 import Members from "./Members";
 import Search from "./Search";
 
@@ -28,7 +28,7 @@ const Content = () => {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/proyects" element={<Proyects />} />
+        <Route exact path="/proyects" element={<Projects />} />
         <Route exact path="/members" element={<Members />} />
         <Route exact path="/search" element={<Search />} />
       </Routes>

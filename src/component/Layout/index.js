@@ -8,11 +8,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
         <Content />
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 };
