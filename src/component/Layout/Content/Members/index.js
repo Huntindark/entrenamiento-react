@@ -3,6 +3,7 @@ import React from "react";
 import { data } from "../../../../utils/data"
 import { nanoid } from "nanoid";
 import MemberCard from "./card/"
+import { CardBinder } from "../../../Styles/CardBinder";
 
 const Members = () => {
   const members = data.members
@@ -15,7 +16,9 @@ const Members = () => {
   return (
     <>
       <p>Pagina de Miembros</p>
-      {membersList}
+      <CardBinder>
+        {membersList}
+      </CardBinder>
     </>
   );
 };

@@ -1,11 +1,14 @@
 /*----- Core -----*/
 import React from "react";
+import { StyledFooter } from "./styles";
 
 const Footer = () => {
   return (
     <>
-      <p>Federico Fernandez</p>
-      <p>2022</p>
+      <StyledFooter>
+        <p>Federico Fernandez</p>
+        <p>2022</p>
+      </StyledFooter>
     </>
   );
 };
