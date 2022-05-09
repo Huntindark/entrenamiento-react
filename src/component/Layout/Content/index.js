@@ -1,24 +1,20 @@
 /*----- Core -----*/
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Projects from "./Projects";
 import Members from "./Members";
 import Search from "./Search";
+import { StyledLink } from "../../Styles/StyledLink";
+import { LinkHolder } from "../../Styles/LinkHolder";
 
 const Home = () => {
   return (
     <>
-      <ul>
-        <li>
-          <Link to="/proyects">Proyectos</Link>
-        </li>
-        <li>
-          <Link to="/members">Miembros</Link>
-        </li>
-        <li>
-          <Link to="/search">Busqueda</Link>
-        </li>
-      </ul>
+      <LinkHolder>
+        <StyledLink to="/projects">Proyectos</StyledLink>
+        <StyledLink to="/members">Miembros</StyledLink>
+        <StyledLink to="/search">Busqueda</StyledLink>
+      </LinkHolder>
     </>
   );
 };
@@ -28,7 +24,7 @@ const Content = () => {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/proyects" element={<Projects />} />
+        <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/members" element={<Members />} />
         <Route exact path="/search" element={<Search />} />
       </Routes>

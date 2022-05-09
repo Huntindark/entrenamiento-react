@@ -2,8 +2,10 @@
 import React from "react";
 import { data } from "../../../../utils/data"
 import { nanoid } from "nanoid";
-import MemberCard from "./card/"
+// import MemberCard from "./card/"
 import { CardBinder } from "../../../Styles/CardBinder";
+import MemberCard from "./card/"
+// import { StyledMemberCard } from "./card/styles";
 
 const Members = () => {
   const members = data.members
