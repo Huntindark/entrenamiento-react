@@ -7,8 +7,6 @@ import { CardBinder } from "../../../Styles/CardBinder";
 import PropTypes from "prop-types";
 
 const Projects = ({ projects = data.projects }) => {
-  // const projects = data.projects
-
   const projectsList = projects.map((project) => (
     <ProjectCard
       id={nanoid()}
