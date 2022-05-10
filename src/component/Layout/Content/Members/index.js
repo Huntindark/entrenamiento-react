@@ -6,9 +6,8 @@ import { CardBinder } from "../../../Styles/CardBinder";
 import MemberCard from "./card/";
 import PropTypes from "prop-types";
 
-const Members = ({ members = data.members }) => {
+const Members = ({ members }) => {
   const roles = data.roles;
-
   const membersList = members.map((member) => (
     <MemberCard
       id={nanoid()}
@@ -21,14 +20,18 @@ const Members = ({ members = data.members }) => {
 
   return (
     <>
-      <p>Pagina de Miembros</p>
+      {/* <p>Pagina de Miembros</p> */}
       <CardBinder>{membersList}</CardBinder>
     </>
   );
 };
 
 Members.propTypes = {
-  members: PropTypes.object,
+  members: PropTypes.array,
+};
+
+Members.defaultProps = {
+  members: data.members,
 };
 
 export default Members;

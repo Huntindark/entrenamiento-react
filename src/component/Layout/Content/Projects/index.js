@@ -19,7 +19,7 @@ const Projects = ({ projects = data.projects }) => {
 
   return (
     <>
-      <p>Pagina de proyectos</p>
+      {/* <p>Pagina de proyectos</p> */}
       <CardBinder>{projectsList}</CardBinder>
     </>
   );

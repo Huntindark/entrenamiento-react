@@ -21,4 +21,10 @@ MemberCard.propTypes = {
   role: PropTypes.string.isRequired,
 };
 
+MemberCard.defaultProps = {
+  firstName: "Missing",
+  lastName: "Names",
+  role: "Filler",
+};
+
 export default MemberCard;
