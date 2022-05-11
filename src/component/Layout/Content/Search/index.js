@@ -1,15 +1,20 @@
 /*----- Core -----*/
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardBinder } from "../../../Styles/CardBinder";
 import { data } from "../../../../utils/data";
 import Projects from "../Projects";
 import Members from "../Members";
+import PropTypes from "prop-types";
 
-const Proyects = () => {
-  const [query, setQuery] = useState("");
+const Search = ({ filter }) => {
+  const [query, setQuery] = useState(filter);
   const projects = data.projects;
   const members = data.members;
   const roles = data.roles;
+
+  useEffect(() => {
+    setQuery(filter);
+  }, [filter]);
 
   const projectsList = projects.filter(function (project) {
     return project.name.toLowerCase().includes(query);
@@ -43,4 +48,12 @@ const Proyects = () => {
   );
 };
 
-export default Proyects;
+Search.propTypes = {
+  filter: PropTypes.string,
+};
+
+Search.defaultProps = {
+  filter: "",
+};
+
+export default Search;
