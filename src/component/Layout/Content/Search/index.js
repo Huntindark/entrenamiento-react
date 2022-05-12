@@ -42,7 +42,7 @@ const Search = ({ filter }) => {
       <input onChange={handleInput} value={query}></input>
       <CardBinder>
         <Projects projects={projectsList} />
-        <Members members={membersList} />
+        <Members people={membersList} />
       </CardBinder>
     </>
   );
