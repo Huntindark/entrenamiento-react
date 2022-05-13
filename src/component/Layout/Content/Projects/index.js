@@ -1,6 +1,6 @@
 /*----- Core -----*/
 import React, { useState, useEffect } from "react";
-// import { data } from "../../../../utils/data";
+import { projectImages } from "../../../../utils/data";
 import { nanoid } from "nanoid";
 import ProjectCard from "./card/";
 import { CardBinder } from "../../../Styles/CardBinder";
@@ -32,7 +32,7 @@ const Projects = ({ filteredProjects }) => {
       <ProjectCard
         id={nanoid()}
         name={project.name}
-        img={project.img}
+        img={projectImages[project.img]}
         stack={project.stack}
         key={nanoid()}
       />

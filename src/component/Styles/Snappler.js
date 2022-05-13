@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Snappler = styled.p`
   font-size: larger;
-  color: orangered;
-`
+  color: ${(props) => props.theme.primary};
+`;

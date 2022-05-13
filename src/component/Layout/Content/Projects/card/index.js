@@ -1,13 +1,14 @@
 import React from "react";
 import Card from "../../../../Generic/Card";
 import PropTypes from "prop-types";
+import { StyledP } from "../../../../Styles/StyledP";
 
 const ProjectCard = ({ name, img }) => {
   return (
     <>
       <Card>
         <img src={img} />
-        <p>{name}</p>
+        <StyledP>{name}</StyledP>
       </Card>
     </>
   );

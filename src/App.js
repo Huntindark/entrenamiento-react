@@ -4,11 +4,18 @@ import Layout from "./component/Layout";
 // import Footer from "./component/Layout/Footer";
 // import Navbar from "./component/Layout/Navbar";
 // import Content from "./component/Layout/Content";
+import Theme from "./Theme";
+import ThemeStore from "./contexts/ThemeStore";
+// import StyledLayout from "./component/Layout/style";
 
 function App() {
   return (
     <>
-      <Layout />
+      <ThemeStore>
+        <Theme>
+          <Layout />
+        </Theme>
+      </ThemeStore>
     </>
   );
 }
