@@ -6,16 +6,19 @@ import Layout from "./component/Layout";
 // import Content from "./component/Layout/Content";
 import Theme from "./Theme";
 import ThemeStore from "./contexts/ThemeStore";
+import APIStore from "./contexts/APIStore";
 // import StyledLayout from "./component/Layout/style";
 
 function App() {
   return (
     <>
-      <ThemeStore>
-        <Theme>
-          <Layout />
-        </Theme>
-      </ThemeStore>
+      <APIStore>
+        <ThemeStore>
+          <Theme>
+            <Layout />
+          </Theme>
+        </ThemeStore>
+      </APIStore>
     </>
   );
 }

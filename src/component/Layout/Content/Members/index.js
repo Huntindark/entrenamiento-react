@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 // import { data } from "../../../../utils/data";
 import { nanoid } from "nanoid";
-import { CardBinder } from "../../../Styles/CardBinder";
+import CardBinder from "../../../Generic/CardBinder";
 import MemberCard from "./card/";
 import PropTypes from "prop-types";
 
