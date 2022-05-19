@@ -1,46 +1,24 @@
 /*----- Core -----*/
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 // import { data } from "../../../../utils/data";
 import { nanoid } from "nanoid";
 import CardBinder from "../../../Generic/CardBinder";
 import MemberCard from "./card/";
 import PropTypes from "prop-types";
+import { APIContext } from "../../../../contexts/APIStore";
+import StyledContent from "../styles";
 
-const Members = ({ people }) => {
+const Members = ({ people = null }) => {
   const [members, setMembers] = useState(people);
   const [roles, setRoles] = useState(null);
-  // const roles = data.roles;
 
-  const url = "https://tswwqpqg6i.execute-api.us-east-1.amazonaws.com/Test/";
-
-  const fetchMembers = async () => {
-    try {
-      const result = await fetch(`${url}members`).then((result) =>
-        result.json()
-      );
-      setMembers(result);
-      return result;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const fetchRoles = async () => {
-    try {
-      const resultRoles = await fetch(`${url}roles`).then((resultRoles) =>
-        resultRoles.json()
-      );
-      setRoles(resultRoles);
-      return resultRoles;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+  const { state } = useContext(APIContext);
   useEffect(() => {
-    fetchRoles();
-    fetchMembers();
-  }, []);
+    let validOnes = people || state.members;
+
+    setMembers(validOnes);
+    setRoles(state.roles);
+  }, [people, state.members, state.roles, setMembers, setRoles]);
 
   const membersList = () => {
     return members.map((member) => (
@@ -54,27 +32,19 @@ const Members = ({ people }) => {
     ));
   };
 
-  useEffect(() => {
-    if (roles && members) {
-      setMembers(people);
-    }
-  }, [people]);
-
   if (!roles || !members)
     return (
       <>
         <p>Holis, awanta</p>
       </>
     );
-  return <>{<CardBinder>{membersList()}</CardBinder>}</>;
+  return (
+    <StyledContent>{<CardBinder>{membersList()}</CardBinder>}</StyledContent>
+  );
 };
 
 Members.propTypes = {
   people: PropTypes.array,
-};
-
-Members.defaultProps = {
-  people: null,
 };
 
 export default Members;

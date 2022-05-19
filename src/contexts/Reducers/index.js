@@ -1,33 +1,33 @@
 export const APIReducer = (state, { type, payload }) => {
-  switch (type){
-    case "SET_PROJECTS": 
+  switch (type) {
+    case "SET_PROJECTS":
       return {
         ...state,
-        projects: payload
-      }
-    case "SET_MEMBERS": 
+        projects: payload,
+      };
+    case "SET_MEMBERS":
       return {
         ...state,
-        members: payload
-      }
-    case "SET_ROLES": 
+        members: payload,
+      };
+    case "SET_ROLES":
       return {
         ...state,
-        roles: payload
-      }
-    case "START_LOADING": 
+        roles: payload,
+      };
+    case "START_LOADING":
       return {
         ...state,
-        loading: true
-      }
-    case "END_LOADING": 
+        loading: true,
+      };
+    case "END_LOADING":
       return {
         ...state,
-        loading: false
-      }
+        loading: false,
+      };
     default:
       return {
-        ...state
-      }
+        ...state,
+      };
   }
-}
+};

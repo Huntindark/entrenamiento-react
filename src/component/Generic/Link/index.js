@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledLink } from "../../Styles/StyledLink";
+import { StyledLink } from "./styles";
 
 const Link = (props) => <StyledLink {...props} />;
 

@@ -6,50 +6,44 @@ import ProjectCard from "./card/";
 import CardBinder from "../../../Generic/CardBinder";
 import PropTypes from "prop-types";
 import { APIContext } from "../../../../contexts/APIStore";
+import StyledContent from "../styles";
 
-const Projects = ({ filteredProjects }) => {
-//   const [state] = useContext(APIContext);
-//   // const [state] = useAPIContext();
-//   const [projects, setProjects] = useState(filteredProjects);
-//   console.log(state)
-//   useEffect(() => {
-//     // let validOnes = filteredProjects ? state.projects : filteredProjects 
-    
-//     setProjects(state.projects)
-//   }, [])
+const Projects = ({ filteredProjects = null }) => {
+  const { state } = useContext(APIContext);
+  const [projects, setProjects] = useState(filteredProjects);
+  useEffect(() => {
+    let validOnes = filteredProjects || state.projects;
 
-//   const projectsList = () => {
-//     return projects.map((project) => (
-//       <ProjectCard
-//         id={nanoid()}
-//         name={project.name}
-//         img={projectImages[project.img]}
-//         stack={project.stack}
-//         key={nanoid()}
-//       />
-//     ));
-//   };
+    setProjects(validOnes);
+  }, [filteredProjects, state.projects, setProjects]);
 
-//   if (!projects)
-//     return (
-//       <>
-//         <p>Holis, awanta</p>
-//       </>
-//     );
-//   return (
-//     <>
-//       <CardBinder>{projectsList()}</CardBinder>
-//     </>
-//   );
-return<></>
+  const projectsList = () => {
+    return projects.map((project) => (
+      <ProjectCard
+        id={nanoid()}
+        name={project.name}
+        img={projectImages[project.img]}
+        stack={project.stack}
+        key={nanoid()}
+      />
+    ));
+  };
+
+  if (!projects)
+    return (
+      <>
+        <p>Holis, awanta</p>
+      </>
+    );
+  return (
+    <StyledContent>
+      <CardBinder>{projectsList()}</CardBinder>
+    </StyledContent>
+  );
 };
 
 Projects.propTypes = {
   filteredProjects: PropTypes.object,
-};
-
-Projects.defaultProps = {
-  filteredProjects: null,
 };
 
 export default Projects;

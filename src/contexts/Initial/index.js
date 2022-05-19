@@ -1,6 +1,6 @@
 export const initial = {
-  project: null,
+  projects: null,
   members: null,
   roles: null,
   loading: false,
-}
+};

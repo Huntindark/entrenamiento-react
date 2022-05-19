@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 const themes = {
   dark: {
     primary: "#fbfbfb",
-    secondary: "#293A5C",
-    background: "#5a6d93",
+    secondary: "#5a6d93",
+    background: "#293A5C",
   },
   light: {
     primary: "#293A5C",
