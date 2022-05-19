@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const StyledLink = styled(Link)`
+export const StyledButton = styled.button`
   text-decoration: none; /* no underline */
   color: ${(props) => props.theme.primary};
+  background: ${(props) => props.theme.background};
   padding: 8px;
   border: 2px solid ${(props) => props.theme.secondary};
   margin: 3px;

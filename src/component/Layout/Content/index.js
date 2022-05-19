@@ -8,6 +8,7 @@ import { StyledLink } from "../../Generic/Link/styles";
 import { LinkHolder } from "../../Styles/LinkHolder";
 import StyledContent from "./styles";
 import CreateMemberHolder from "./Members/Create/CreateMemberHolder";
+import Button from "../../Generic/Button";
 
 const Home = () => {
   const [modal, setModal] = useState(false);
@@ -22,7 +23,7 @@ const Home = () => {
         <StyledLink to="/projects">Proyectos</StyledLink>
         <StyledLink to="/members">Miembros</StyledLink>
         <StyledLink to="/search">Busqueda</StyledLink>
-        <button onClick={() => toggleModal()}>Crear</button>
+        <Button onClick={() => toggleModal()}>Crear</Button>
       </LinkHolder>
       <CreateMemberHolder
         modal={modal}
